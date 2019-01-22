@@ -29,7 +29,7 @@ Configuration steps:
 
    c. Go to `travis-ci.com <https://travis-ci.com/>`__ and find the settings for the
       repository you're working on. In the "Environment Variables" section,
-      defined a new one called ``GITHUB_TOKEN`` and copy in your token from
+      define a new one called ``GITHUB_TOKEN`` and copy in your token from
       the step above. **IMPORTANT!!!** Be sure that the toggle to display 
       the value in the build log is off. This is a private token that should
       not be shared.  
