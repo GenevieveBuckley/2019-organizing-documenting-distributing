@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Structuring your repository &mdash; Code for the World 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to sphinx" href="sphinx_intro.html" />
+    <link rel="prev" title="How to use this project" href="../how_to_use.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Code for the World
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../how_to_use.html">How to use this project</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Setting up your repo</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Structuring your repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_intro.html">Introduction to sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest_intro.html">Introduction to pytest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuring_travis.html">Configuring Travis CI</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Demo documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demo/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/api.html">API Documentation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Demo examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/example_1.html">Loading and plotting airfoils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/example_1.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/example_1.html#results">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/example_1.html#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/example_2.html">Calculating the lift force</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/example_2.html#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/example_2.html#results">Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/example_2.html#code">Code</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Code for the World</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Structuring your repository</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/repo_setup/repo_structure.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="structuring-your-repository">
+<span id="package-structure"></span><h1>Structuring your repository<a class="headerlink" href="#structuring-your-repository" title="Permalink to this headline">¶</a></h1>
+<p>There are four main considerations when building your repository. First, you
+need to consider the structure of the package itself. Second, the location of
+your tests. Third, the location of the source files for your documentation.
+Fourth and last, the location of any examples you provide to your users.</p>
+<p><strong>Structure of a python package</strong></p>
+<p>There are many tutorials online about the structuring of Python packages. You
+know, directories with <code class="docutils literal notranslate"><span class="pre">*.py</span></code> files and an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file,
+which tells Python that the directory itself is a module. I won’t reinvent the
+wheel here; just Google “structure of a Python package” to read more about
+that.</p>
+<p>An interesting note is the difference between the structure of a package and
+it’s architecture. In other words, what is the logic behind which functions go
+where? DO you put classes in one module? Functions in another? Do you have a
+<code class="docutils literal notranslate"><span class="pre">utils</span></code> folder for basic underlying functionality? I don’t know if is a
+good answer to this question. It’s up to you.</p>
+<p><strong>Where to put tests</strong></p>
+<p>The recommended practice for pytest is
+<a class="reference external" href="https://docs.pytest.org/en/latest/goodpractices.html">here</a>.
+There are two possible places to put your test files so that pytest can find
+them. I prefer placing my tests in a separate directory away from the code.</p>
+<p><strong>Where to put documentation</strong></p>
+<p>The general rule of thumb is to have a top-level directory called <code class="docutils literal notranslate"><span class="pre">doc</span></code> or
+<code class="docutils literal notranslate"><span class="pre">docs</span></code>. If you run <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> to initialize your sphinx
+documentation, you will run it from the top level of your repository and it
+will create this folder for you.</p>
+<p>Within your <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder, there will be your sphinx configuration file
+<code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, the makefiles for converting your source text files into html or
+a LaTeX pdf, and a directory with the source files for your documentation,
+usually called <code class="docutils literal notranslate"><span class="pre">source</span></code>. If you have generated the sphinx html files locally,
+there will also be a directory with the build files, often called <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p>
+<p><strong>Where to put examples</strong></p>
+<p>There is no recommended practice for where to store examples or demos for your
+code. I like to have a separate folder called <code class="docutils literal notranslate"><span class="pre">examples</span></code>. Then I can run
+<code class="docutils literal notranslate"><span class="pre">pytest</span></code> on that directory and make sure that my examples all work every time
+I update the master branch.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinx_intro.html" class="btn btn-neutral float-right" title="Introduction to sphinx" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../how_to_use.html" class="btn btn-neutral" title="How to use this project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Jenni Rinker
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
